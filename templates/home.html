@@ -1,20 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>This is HTML page</h1>
-    <br/>
-    <a href="{% url 'about' %}">About the page</a>
-    <br/>
-    <br/>
-<form action="{% url 'count' %}">
-    <textarea cols="40" rows="5" name="fulltext"></textarea>
-    <br/>
-    <br/>
-    <input type="submit" value="Count!" />
-</form>
+<h1 align="center">Simple counting application!</h1>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col" align="center">
+            <h6><img src="{% static 'calculator.png' %}" width="30"> Count how many words are in text</h6>
+            <form action="{% url 'count' %}">
+                <textarea cols="40" rows="5" name="fulltext"></textarea>
+                <br/>
+                <input type="submit" value="Count words!"/>
+            </form>
+        </div>
+        <div class="col" align="center">
+            <h6><img src="{% static 'calculator.png' %}" width="30"> Count how many letters are in text</h6>
+            <form action="{% url 'count' %}">
+                <textarea cols="40" rows="5" name="fulltext"></textarea>
+                <br/>
+                <input type="submit" value="Count letters!"/>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+{% endblock %}
