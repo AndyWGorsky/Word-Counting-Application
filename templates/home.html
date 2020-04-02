@@ -22,7 +22,7 @@
         </div>
         <div class="col" align="center">
             <h6><img src="{% static 'calculator.png' %}" width="30"> Count how many letters are in text</h6>
-            <form action="{% url 'count' %}">
+            <form action="{% url 'count_letters' %}">
                 <textarea cols="40" rows="5" name="fulltext"></textarea>
                 <br/>
                 <input type="submit" value="Count letters!"/>

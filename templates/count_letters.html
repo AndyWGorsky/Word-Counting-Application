@@ -7,18 +7,11 @@
     <title>Counted words</title>
 </head>
 <body>
-    <h1>There are {{ count }}  words in your text!</h1>
+    <h1>There are {{ count_letters }}  letters in your text (including space)!</h1>
     <br/>
     <a button type="button" class="btn btn-info" href="{% url 'home' %}">Back to home page</a>
     <br>
     <br>
-    <h2>Word count:</h2>
-    {% for word, counttotal in sortedwords %}
-
-    {{ word }} - {{ counttotal }}
-    <br>
-    <br>
-    {% endfor %}
     <h2>Original text:</h2>
     {{ fulltext }}
 </body>

@@ -6,8 +6,10 @@ import operator
 def home(request):
     return render(request, 'home.html')
 
+
 def about(request):
     return render(request, 'about.html')
+
 
 def count(request):
     fulltext = request.GET['fulltext']
@@ -22,4 +24,9 @@ def count(request):
             worddictionary[word] = 1
     sortedwords = sorted(worddictionary.items(), key=operator.itemgetter(1), reverse=True)
     return render(request, 'count.html', {'fulltext': fulltext, 'count': len(wordlist), 'sortedwords': sortedwords})
+
+
+def count_letters(request):
+    fulltext = request.GET['fulltext']
+    return render(request, 'count_letters.html', {'fulltext': fulltext, 'count_letters': len(fulltext)})
 
